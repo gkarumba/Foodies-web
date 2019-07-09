@@ -2,12 +2,9 @@
 
 export class Restaurant {
     constructor(
+        public id: number,
         public name: string,
-        public category: string,
         public location: string,
-        public description: string,
-        public information:  any[],
-        public foods: any[],
-        public reviews:  any[]
+        public image: string
     ) {}
 }

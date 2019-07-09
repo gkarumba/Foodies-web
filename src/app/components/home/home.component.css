@@ -16,7 +16,6 @@ main .welcomeImage {
     grid-area: subheader;
   }
 
-
 main figcaption {
     display: grid;
     grid-template-areas:
@@ -35,7 +34,6 @@ main figcaption {
     color: #7a6d6a;
     border: 2px solid #c3bcba;
       letter-spacing: 1px;
-
   }
 
 main figcaption h1 {
@@ -43,18 +41,21 @@ main figcaption h1 {
   line-height: 60px;
   font-size: 2.2rem;
   font-weight: 800;
+  color: #666;
 }
+
 main figcaption h6 {
     letter-spacing: 1px;
     line-height: 30px;
     font-size: 0.9rem;
     font-weight: 700;
+    color: #666;
+
   }
 h4 {
   font-size: 1.2rem;
   text-align: center;
   color: #333;
-
 }
 
 @media only screen and (max-width: 845px) {

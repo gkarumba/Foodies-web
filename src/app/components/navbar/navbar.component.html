@@ -10,7 +10,7 @@
 
 <!-- to be displayed when user is not logged in-->
       <li class="nav-item">
-          <a class="nav-link" routerLink="/foodcart">Log In</a>
+          <a class="nav-link" routerLink="/login">Log In</a>
         </li>
 
 <!-- to be displayed on login-->
@@ -23,11 +23,11 @@
           Username
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/login">Login</a>
             <a class="dropdown-item" routerLink="orders">My Orders</a>
+            <!-- to be displayed if user is a Restaurant Owner-->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/admin/menu">Restaurant Cuisines</a>
             <a class="dropdown-item" routerLink="/admin/orders">Customer Orders</a>
+            <a class="dropdown-item" routerLink="/">Add Restaurant</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="/">Log Out</a>
         </div>

@@ -15,6 +15,8 @@ import { AdminCuisinesComponent } from './components/admin/admin-cuisines/admin-
 import { FoodCartComponent } from './components/food-cart/food-cart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SuperAdminComponent } from './components/super-admin/super-admin.component';
+import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SignupComponent } from './components/signup/signup.component';
     AdminCuisinesComponent,
     FoodCartComponent,
     NavbarComponent,
-    SignupComponent
+    SignupComponent,
+    SuperAdminComponent,
+    RestaurantCardComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import { SignupComponent } from './components/signup/signup.component';
       { path: 'admin/menu', component: AdminCuisinesComponent},
       { path: 'admin/orders', component: AdminOrdersComponent},
       { path: 'login', component: LoginComponent},
-      { path: 'sign-up', component: SignupComponent}
+      { path: 'sign-up', component: SignupComponent},
+      { path: 'super-admin', component: SuperAdminComponent}
     ])
   ],
   providers: [],

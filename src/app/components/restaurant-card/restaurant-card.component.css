@@ -1,0 +1,45 @@
+/*------CSS Grid------*/
+.grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 1rem;
+    width: 86%;
+    margin: 0 auto;
+}
+/*------Popular Restaurants Sections--------*/
+
+.popular h4 {
+    font-weight: 600;
+    font-size: 12px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 1rem;
+    width: 86%;
+    margin: 0 auto;
+}
+/*------Card Section-----*/
+.card {
+    overflow: hidden;
+}
+.card:focus,
+.card:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.card img {
+    max-width: 100%;
+    -moz-transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+.card:focus,
+.card:hover img {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.card-meta {
+    font-size: 14px;
+}

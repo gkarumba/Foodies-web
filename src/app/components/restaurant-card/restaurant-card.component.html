@@ -1,3 +1,23 @@
-<p>
-  restaurant-card works!
-</p>
+    <!-- </section> -->
+    <section id="more">
+      <div class="grid-container popular">
+        <div *ngFor = "let restaurant of restaurants; let i='index'">
+          <div class="card">
+            <img class="card-img-top" src="{{restaurant.image}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">{{restaurant.name}}</h4>
+                  <h6 class=" card-title">{{restaurant.location}}</h6>
+            <span class="card-meta">
+              <i class="ion-android-star"></i>
+              <i class="ion-android-star"></i>
+              <i class="ion-android-star"></i>
+              <i class="ion-android-star-outline"></i>
+              <i class="ion-android-star-outline"></i>
+            </span><br>
+            <span class="card-meta">115 Reviews</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- </section> -->

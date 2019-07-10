@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SuperAdminComponent } from './components/super-admin/super-admin.component';
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RestaurantCardComponent } from './components/restaurant-card/restaurant
     NavbarComponent,
     SignupComponent,
     SuperAdminComponent,
-    RestaurantCardComponent
+    RestaurantCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

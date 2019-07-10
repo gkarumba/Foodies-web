@@ -16,6 +16,4 @@ export class RestaurantCardComponent {
     new Restaurant(4, 'Wimpy', 'Upperhill', 'https://www.celadonnapa.com/wp-content/uploads/2015/02/celadon-food.jpg'),
     new Restaurant(5, "Moody's Restaurant", 'Upperhill', 'https://www.celadonnapa.com/wp-content/uploads/2015/02/celadon-food.jpg')
     ]
-
-
 }

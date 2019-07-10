@@ -39,8 +39,16 @@
     font-weight: 700;
   }
 
-
-
+.moreHeader{
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between
+}
+hr{
+  margin-bottom: 35px;
+}
 
 @media only screen and (max-width: 745px) {
   h1 {
@@ -48,34 +56,17 @@
     padding-top: 15px;
   }
 
-  h6 {
-    font-size: 0.7rem;
+  .lead {
+    font-size: 0.7rem!important;
     line-height: 15px;
   }
+
   h4 {
     font-size: 1.2em;
   }
-}
-.moreHeader{
-  padding-top: 15px;
-  width: 90%;
-  display: flex;
-  justify-content: space-between
-}
-.moreHeader h2 {
-  font-weight: 400;
-  font-size: 1.5em;
-  margin-left: 40px;
-} 
-.btn-group{
-  margin-right: -70px;
-  text-align: right;
-}
+  .moreHeader h2 {
+    font-size: 1.2em;
+  }
 
-
-hr{
-  margin-bottom: 35px;
 }
-
-
 

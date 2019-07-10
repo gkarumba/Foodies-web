@@ -1,3 +1,40 @@
-<p>
-  restaurants works!
-</p>
+<main>
+    <section class="welcomeArea">
+  
+        <section class="jumbotron jumbotron-fluid text-center d-flex align-items-center">
+            <div class="container header align-middle">
+              <h1 class="jumbotron-heading">Foodiez App</h1>
+              <p class="lead">ORDER FROM THE BEST RESTAURANTS IN {{location-title}}</p>
+            </div>
+        </section>
+  
+      <div class="container-fluid">
+  
+        <div class="moreHeader row">
+          <div col-sm-6>
+            <h2> Highest Rated in {{location-title}} </h2>
+          </div>
+          <div class="btn-group">
+              <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
+            </div>
+        </div>
+        <hr>
+  
+      </div>
+    </section>
+  </main>
+
+<restaurant-card></restaurant-card>
+
+<hr>
+
+<restaurant-card></restaurant-card>
+<restaurant-card></restaurant-card>
+<restaurant-card></restaurant-card>

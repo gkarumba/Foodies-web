@@ -55,16 +55,9 @@ h1::after {
 .moreHeader h2 {
   font-weight: 400;
   font-size: 1.5em;
-}
-.btn-light{
-  background-color: #f1f1f1!important;
-  border-radius: none;
+  
 }
 
-.btn-light :hover{
-  background-color: #ffffff!important;
-  border-radius: none;
-}
 hr {
   margin-bottom: 35px;
 }

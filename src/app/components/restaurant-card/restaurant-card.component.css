@@ -9,10 +9,7 @@
 }
 /*------Popular Restaurants Sections--------*/
 
-.popular h4 {
-    font-weight: 600;
-    font-size: 12px;
-}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,6 +39,13 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-.card-meta {
-    font-size: 14px;
+h4{
+    font-size: 1em;
+}
+h5{
+    font-size: 1em;
+}
+h5 a:hover{
+    text-decoration: none;
+    font-size: 1em;
 }

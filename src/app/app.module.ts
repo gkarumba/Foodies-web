@@ -49,8 +49,8 @@ import { RestLocationComponent } from './components/rest-location/rest-location.
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'restaurant-list', component: RestaurantsComponent},
-      { path: 'restaurant', component: RestComponent},
+      { path: 'restaurant-list/:location', component: RestaurantsComponent},
+      { path: 'restaurant/:id', component: RestComponent},
       { path: 'foodcart', component: FoodCartComponent},
       { path: 'order-success', component: OrderSuccessComponent},
       { path: 'orders', component: MyordersComponent},

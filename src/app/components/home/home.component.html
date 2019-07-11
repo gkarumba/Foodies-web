@@ -19,8 +19,8 @@
             Location
           </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" routerLink="/restaurant-list">Location1</a>
-                <a class="dropdown-item" routerLink="/restaurant-list">Location2</a>
+                <a class="dropdown-item" [routerLink]="['/restaurant-list', location]">Location1</a>
+                <a class="dropdown-item" [routerLink]="['/restaurant-list', location]">Location2</a>
             </div>
           </div>
       </div>

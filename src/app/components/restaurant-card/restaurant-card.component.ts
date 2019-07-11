@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../../services/rests/restaurant.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  RestaurantService
+} from '../../services/rests/restaurant.service';
+import {
+  ActivatedRoute
+} from '@angular/router'
 
 @Component({
   selector: 'restaurant-card',
@@ -7,9 +15,9 @@ import { RestaurantService } from '../../services/rests/restaurant.service';
   styleUrls: ['./restaurant-card.component.css']
 })
 
-export class RestaurantCardComponent  implements OnInit {
+export class RestaurantCardComponent implements OnInit {
 
-  constructor(private _restaurant: RestaurantService) { }
+  constructor(private route: ActivatedRoute, private _restaurant: RestaurantService) {}
 
   restaurant = [];
 
@@ -23,6 +31,11 @@ export class RestaurantCardComponent  implements OnInit {
         res => this.restaurant.push(res),
         err => console.log(err)
       );
+
+    this.route.paramMap
+      .subscribe(params => {
+        console.log(params);
+      });
   }
 
   getRest() {

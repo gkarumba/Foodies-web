@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -18,6 +19,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SuperAdminComponent } from './components/super-admin/super-admin.component';
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RestaurantService } from './services/rests/restaurant.service';
+import { LocationRestaurantService } from './services/rests/location-restaurant.service';
+import { RestLocationComponent } from './components/rest-location/rest-location.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +39,14 @@ import { FooterComponent } from './components/footer/footer.component';
     SignupComponent,
     SuperAdminComponent,
     RestaurantCardComponent,
-    FooterComponent
+    FooterComponent,
+    RestLocationComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'restaurant-list', component: RestaurantsComponent},
@@ -51,10 +58,11 @@ import { FooterComponent } from './components/footer/footer.component';
       { path: 'admin/orders', component: AdminOrdersComponent},
       { path: 'login', component: LoginComponent},
       { path: 'sign-up', component: SignupComponent},
-      { path: 'super-admin', component: SuperAdminComponent}
+      { path: 'super-admin', component: SuperAdminComponent},
+      { path: 'restaurant/location/Upperhill', component: RestLocationComponent}
     ])
   ],
-  providers: [],
+  providers: [RestaurantService, LocationRestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

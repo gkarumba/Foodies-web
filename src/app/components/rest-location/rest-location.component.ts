@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../../services/rests/restaurant.service';
+import { LocationRestaurantService } from '../../services/rests/location-restaurant.service';
 
 @Component({
-  selector: 'restaurant-card',
-  templateUrl: './restaurant-card.component.html',
-  styleUrls: ['./restaurant-card.component.css']
+  selector: 'rest-location',
+  templateUrl: './rest-location.component.html',
+  styleUrls: ['./rest-location.component.css']
 })
+export class RestLocationComponent implements OnInit {
 
-export class RestaurantCardComponent  implements OnInit {
-
-  constructor(private _restaurant: RestaurantService) { }
+  constructor(private _restaurant: LocationRestaurantService) { }
 
   restaurant = [];
 
   rest
-  restrnts
 
   ngOnInit() {
     // console.log(this.restaurant);
@@ -28,7 +26,6 @@ export class RestaurantCardComponent  implements OnInit {
   getRest() {
     this.rest = this.restaurant[0].data;
     console.log(this.restaurant[0].data);
-    this.restrnts = this.rest.slice(0, 5);
   }
 
 }

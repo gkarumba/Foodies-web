@@ -1,36 +1,52 @@
-    
-    <button type="button" (click)="getRest()" class="btn btn-success float-right">View Restaurants</button>
-    
-    <!-- </section> -->
-    <section id="more">
-      <div class="grid-container popular">
-        <div *ngFor = "let res of restrnts; let i='index'">
-              <!-- Card Light -->
-<div class="card">
+<div class="container-fluid">
 
-  <!-- Card image -->
-  <div class="view overlay">
-    <img class="card-img-top" src="{{res.image_url}}" alt="Restaurant image ">
-    <a>
-      <div class="mask rgba-white-slight"></div>
-    </a>
+  <div class="moreHeader row">
+    <div class="col-xs-6" (click)="getRest()">
+      <h2>POPULAR RESTAURANTS</h2>
+    </div>
+    <div class="btn-group ">
+      <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Location
+      </button>
+      <div *ngFor="let loc of locations; let i='index'" class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" [routerLink]="['/restaurant-list', loc]"> {{loc}} </a>
+      </div>
+    </div>
   </div>
-
-  <!-- Card content -->
-  <div class="card-body">
-    <!-- Title -->
-    <h4 class="card-title">{{res.name}}</h4>
-    <hr>
-    <!-- Text -->
-    <p class="card-text">{{res.location}}</p>
-    <!-- Link -->
-    <a [routerLink]="['/restaurant',res.id]" class="grey-text d-flex justify-content-end"><h5>Visit <i class="fas fa-angle-double-right"></i></h5></a>
-  </div>
-
+  <hr>
 </div>
-<!-- Card Light -->
-    </div>
-    </div>
-  </section>
-  <!-- </section> -->
+<!-- </section> -->
+<section id="more">
+  <div class="grid-container popular">
+    <div *ngFor="let res of restrnts">
+      <!-- Card Light -->
+      <div class="card">
 
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{{res.image_url}}" alt="Restaurant image ">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+          <!-- Title -->
+          <h4 class="card-title">{{res.name}}</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">{{res.location}}</p>
+          <!-- Link -->
+          <a [routerLink]="['/restaurant',res.id]" class="grey-text d-flex justify-content-end">
+            <h5>Visit <i class="fas fa-angle-double-right"></i></h5>
+          </a>
+        </div>
+
+      </div>
+      <!-- Card Light -->
+    </div>
+  </div>
+</section>
+<!-- </section> -->

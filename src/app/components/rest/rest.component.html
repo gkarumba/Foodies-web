@@ -6,8 +6,8 @@
     <p class="lead">Close Time: 10:30PM</p>
   </div>
 </section>
-<div class="container-fluid nav1 navbar-expand-sm navbar-light bg-white sticky-top" style = "padding-top: 60px;">
-    <ul class="navbar-nav row nav-main">
+<div class="container-fluid nav1 navbar-expand-sm navbar-light bg-white sticky-top" style="padding-top: 60px;">
+  <ul class="navbar-nav row nav-main">
     <!-- to be displayed when user is not logged in-->
     <li class="nav-item ">
       <a class="nav-link" routerLink="#">Menu</a>
@@ -19,46 +19,103 @@
       <a class="nav-link" routerLink="#">Recipe</a>
     </li>
   </ul>
-  <div class="navbar nav2 navbar-expand-sm navbar-light bg-light">
-  <ul class="navbar-nav row">
-    <!-- to be displayed when user is not logged in-->
-    <li class="nav-item col-md-4">
-      <a class="nav-link" routerLink="#">Breakfast</a>
-    </li>
-    <li class="nav-item col-md-4">
-      <a class="nav-link" routerLink="#">Lunch</a>
-    </li>
-    <li class="nav-item col-md-4">
-      <a class="nav-link" routerLink="#">Supper</a>
-    </li>
-  </ul>
+  <div class="navbar nav2 navbar-expand-sm navbar-light bg-light menu-stuff">
+    <ul class="navbar-nav row">
+      <!-- to be displayed when user is not logged in-->
+      <li class="nav-item col-md-4">
+        <a class="nav-link" routerLink="/#breakfast">Breakfast</a>
+      </li>
+      <li class="nav-item col-md-4">
+        <a class="nav-link" routerLink="/#lunch">Lunch</a>
+      </li>
+      <li class="nav-item col-md-4">
+        <a class="nav-link" routerLink="/#supper">Supper</a>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
-<div class="container jumbotron menu">
-<section id="breakfast">
-<div *ngFor = "let food of menu" class="food-item">
-      <div class="card-body row">
-        <h4 class="card-title col-md-9">{{food.name}}</h4>
-        <p class="card-text col-md-3 text-right">{{food.price}}</p>
 
-        <hr class='accent-1 d-inline-block mx-auto'>
-        <p class="card-text col-md-9 text-left">{{food.description}}</p>
-        <button type="button" name="" id="add" class="btn btn-white">Add</button>
-        <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+<!--Beginning of menu-->
+<div class="container jumbotron menu menu-stuff">
+  <section id="breakfast">
+    <h3 class='text-center'>Breakfast</h3>
+    <div *ngFor="let food of menu" class="food-item">
+      <div *ngIf='food.category == "breakfast"'>
+        <div class="card-body row">
+          <h4 class="card-title col-md-9">{{food.name}}</h4>
+          <p class="card-text col-md-3 text-right">{{food.price}}</p>
+
+          <hr class='accent-1 d-inline-block mx-auto'>
+          <p class="card-text col-md-9 text-left">{{food.description}}</p>
+          <button type="button" name="" id="add" class="btn btn-white">Add</button>
+          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-</section>
+  </section>
+  <section id="lunch">
+    <h3 class='text-center'>Lunch</h3>
+    <div *ngFor="let food of menu" class="food-item">
+      <div *ngIf='food.category == "lunch"'>
+        <div class="card-body row">
+          <h4 class="card-title col-md-9">{{food.name}}</h4>
+          <p class="card-text col-md-3 text-right">{{food.price}}</p>
+          <hr class='accent-1 d-inline-block mx-auto'>
+          <p class="card-text col-md-9 text-left">{{food.description}}</p>
+          <button type="button" name="" id="add" class="btn btn-white">Add</button>
+          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </section>
+  <section id="supper">
+    <h3 class='text-center'>Supper</h3>
+    <div *ngFor="let food of menu" class="food-item">
+      <div *ngIf='food.category == "supper"'>
+        <div class="card-body row">
+          <h4 class="card-title col-md-9">{{food.name}}</h4>
+          <p class="card-text col-md-3 text-right">{{food.price}}</p>
+
+          <hr class='accent-1 d-inline-block mx-auto'>
+          <p class="card-text col-md-9 text-left">{{food.description}}</p>
+          <button type="button" name="" id="add" class="btn btn-white">Add</button>
+          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </section>
 </div>
+<!--End of menu-->
+
+<!--Beginning of Reviews-->
+<div class="container jumbotron menu review-stuff">
+      <div *ngFor="let review of reviews" class="food-item">
+          <div class="card-body row">
+            <h4 class="card-title col-md-9">{{review.user}}</h4>
+            <p class="card-text col-md-3 text-right">{{review.posted}}</p>
+  
+            <hr class='accent-1 d-inline-block mx-auto'>
+            <p class="card-text col-md-9 text-left">{{review.review}}</p>
+            <button type="button" name="" id="add" class="btn btn-white">Delete</button>
+          </div>
+          <hr>
+      </div>
+  </div>
+  <!--End of Reviews-->
+
+
+  <!--Beginning of Recipe-->
+<div class="container jumbotron recipe-stuff">
+    <h4>{{recipe.name}}</h4>
+    <hr>
+    <p>{{recipe.name}}</p>
+</div>
+  <!--End of Recipe-->
+
+
 <app-footer></app-footer>
 
-<script>
-  $(function () {
-    $(".sticky-content").sticky({
-      topSpacing: 50,
-      zIndex: 2,
-      stopper: "#footer"
-    });
 
-  });
-</script>

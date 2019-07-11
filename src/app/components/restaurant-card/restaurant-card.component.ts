@@ -23,6 +23,9 @@ export class RestaurantCardComponent implements OnInit {
 
   rest
   restrnts
+  locations=[]
+  locationSet
+
 
   ngOnInit() {
     // console.log(this.restaurant);
@@ -41,7 +44,17 @@ export class RestaurantCardComponent implements OnInit {
   getRest() {
     this.rest = this.restaurant[0].data;
     console.log(this.restaurant[0].data);
-    this.restrnts = this.rest.slice(0, 5);
-  }
+    this.restrnts = this.rest.slice(1, 6);
+    for (var i =0; i<this.rest.length; i++){
+      this.locations.push(this.rest[i].location);
+    }
+    this.locationSet = new Set(this.locations);
+    console.log(this.locationSet);
+    this.locationSet.forEach(function(item){
+          this.locations.push(item)
+      });
+      console.log("List");
+      console.log(this.locations);
 
+  }
 }

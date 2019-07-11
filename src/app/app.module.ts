@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RestaurantService } from './services/rests/restaurant.service';
 import { LocationRestaurantService } from './services/rests/location-restaurant.service';
 import { RestLocationComponent } from './components/rest-location/rest-location.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RestLocationComponent } from './components/rest-location/rest-location.
     SuperAdminComponent,
     RestaurantCardComponent,
     FooterComponent,
-    RestLocationComponent
+    RestLocationComponent,
+    ReviewsComponent
 
   ],
   imports: [

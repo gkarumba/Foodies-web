@@ -2,6 +2,8 @@ import { Review } from './../../services/reviews/reviews.model';
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Menu } from '../../services/menu/menu.model';
 import { Information } from '../../services/information/information.model';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-rest',
   templateUrl: './rest.component.html',

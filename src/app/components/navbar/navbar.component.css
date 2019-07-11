@@ -2,3 +2,6 @@
 .dropdown-toggle{
     cursor: pointer;
 }
+nav {
+    margin-bottom: 40px;
+}

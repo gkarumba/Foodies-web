@@ -1,8 +1,64 @@
-<section class="jumbotron jumbotron-fluid text-center d-flex align-items-center">
+<section class="jumbotron jumbotron-fluid main-header text-center d-flex align-items-center sticky-content">
   <div class="container header align-middle">
-    <h1 class="jumbotron-heading">Foodiez App</h1>
-    <p class="lead">ORDER FOOD FROM THE BEST RESTAURANTS IN TOWN</p>
+    <h3 class="jumbotron-heading">Restaurant Name</h3>
+    <p class="lead">Location</p>
+    <p class="lead">Open Time: 09:30AM</p>
+    <p class="lead">Close Time: 10:30PM</p>
   </div>
 </section>
+<div class="container-fluid nav1 navbar-expand-sm navbar-light bg-white sticky-top" style = "padding-top: 60px;">
+    <ul class="navbar-nav row nav-main">
+    <!-- to be displayed when user is not logged in-->
+    <li class="nav-item ">
+      <a class="nav-link" routerLink="#">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="#">Reviews</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="#">Recipe</a>
+    </li>
+  </ul>
+  <div class="navbar nav2 navbar-expand-sm navbar-light bg-light">
+  <ul class="navbar-nav row">
+    <!-- to be displayed when user is not logged in-->
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#">Breakfast</a>
+    </li>
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#">Lunch</a>
+    </li>
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#">Supper</a>
+    </li>
+  </ul>
+</div>
+</div>
+<div class="container jumbotron menu">
+<section id="breakfast">
+<div *ngFor = "let food of menu" class="food-item">
+      <div class="card-body row">
+        <h4 class="card-title col-md-9">{{food.name}}</h4>
+        <p class="card-text col-md-3 text-right">{{food.price}}</p>
 
+        <hr class='accent-1 d-inline-block mx-auto'>
+        <p class="card-text col-md-9 text-left">{{food.description}}</p>
+        <button type="button" name="" id="add" class="btn btn-white">Add</button>
+        <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+      </div>
+      <hr>
+    </div>
+</section>
+</div>
 <app-footer></app-footer>
+
+<script>
+  $(function () {
+    $(".sticky-content").sticky({
+      topSpacing: 50,
+      zIndex: 2,
+      stopper: "#footer"
+    });
+
+  });
+</script>

@@ -77,7 +77,15 @@ h3:after {
 .nav1{
   margin-top: -40px;
 }
+.nav1{
+  font-size: 1.2em;
+  top:0;
 
+}
+.nav2{
+  width: 85%;
+  margin: 0 auto;
+}
 /*-Restaurant Menu------*/
 h4:after {
   content: '';
@@ -93,11 +101,11 @@ h4:after {
   background-color: #fbfbfb;
   width: 80%;
   margin: 0 auto;
-  margin-top: 40px;
   margin-bottom: 40px;
 
 }
 
 .nav-main .nav-item{
   padding-left: 50px;
+  margin: 0 auto;
 }

@@ -2,6 +2,7 @@ import { Review } from './../../services/reviews/reviews.model';
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Menu } from '../../services/menu/menu.model';
 import { Information } from '../../services/information/information.model';
+import { Recipe } from '../../services/recipes/recipes.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,9 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RestComponent implements OnInit {
 
-  information = [
-    new Information(1,' 8:30', '22:00', 'we sell home cooked meals', "Ngong' Rd",'0725489789')
-    ]
+information = [
+  new Information(1,' 8:30', '22:00', 'we sell home cooked meals', "Ngong' Rd",'0725489789')
+  ]
 
   menu = [
     new Menu(1, 'Sandwich','breakfast','Maize flour and water', 650),
@@ -31,30 +32,31 @@ export class RestComponent implements OnInit {
     new Review(4, 'It was okay dawa',2, '12:30pm 8/7/2019', 'Java', 'Lugaga'),
     new Review(5, 'It was okay coffee',1, '12:30pm 8/7/2019', 'Dormans', 'Rakitic')
     ]
+    hideRs = true;
+    hideMR1 = false;
+    hideMR2 = false;
 
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
+    Menu(){
+      this.hideRs = true;
+      this.hideMR1 = false;
+      this.hideMR2 = false;
+    }
+    Reviews(){
+      this.hideRs = false;
+      this.hideMR1 = true;
+      this.hideMR2 = false;    }
+    Recipe(){
+      this.hideRs = false;
+      this.hideMR1 = false;
+      this.hideMR2= true;    }
+
 
   ngOnInit() {
   }
 
-  ngAfterViewInit(){
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
 
-  @HostListener('window:scroll', ['$event'])
-    handleScroll(){
-      const windowScroll = window.pageYOffset;
-      if (windowScroll >= this.elementPosition){
-        this.sticky = true;
-        console.log( window.pageYOffset)
-        console.log( 'active')
 
-      } else {
-        this.sticky = false;
-      }
-    }
+
 }
 
 

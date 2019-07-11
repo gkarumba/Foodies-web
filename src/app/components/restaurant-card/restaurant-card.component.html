@@ -9,9 +9,10 @@
         aria-expanded="false">
         Location
       </button>
-      <div *ngFor="let loc of locations; let i='index'" class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" [routerLink]="['/restaurant-list', loc]"> {{loc}} </a>
-      </div>
+      <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" routerLink="/restaurant-list/Lang'atta"> Lang'atta </a>
+          <a class="dropdown-item" routerLink="/restaurant-list/Mombasa%20Road"> Mombasa Road</a>
+        </div>
     </div>
   </div>
   <hr>

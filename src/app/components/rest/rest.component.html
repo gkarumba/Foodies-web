@@ -7,19 +7,19 @@
   </div>
 </section>
 <div class="container-fluid nav1 navbar-expand-sm navbar-light bg-white sticky-top" style="padding-top: 60px;">
-  <ul class="navbar-nav row nav-main">
+  <ul class="navbar-nav row nav-main text-center">
     <!-- to be displayed when user is not logged in-->
-    <li class="nav-item ">
-      <a class="nav-link" routerLink="#">Menu</a>
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#" (click) ="Menu()">Menu</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="#">Reviews</a>
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#" (click) ="Reviews()">Reviews</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="#">Recipe</a>
+    <li class="nav-item col-md-4">
+      <a class="nav-link" routerLink="#" (click) ="Recipe()">Recipe</a>
     </li>
   </ul>
-  <div class="navbar nav2 navbar-expand-sm navbar-light bg-light menu-stuff">
+  <div  *ngIf = " hideRs" class="navbar nav2 navbar-expand-sm navbar-light bg-light menu-stuff">
     <ul class="navbar-nav row">
       <!-- to be displayed when user is not logged in-->
       <li class="nav-item col-md-4">
@@ -36,7 +36,7 @@
 </div>
 
 <!--Beginning of menu-->
-<div class="container jumbotron menu menu-stuff">
+<div *ngIf = " hideRs " class="container jumbotron menu menu-stuff">
   <section id="breakfast">
     <h3 class='text-center'>Breakfast</h3>
     <div *ngFor="let food of menu" class="food-item">
@@ -91,8 +91,15 @@
 <!--End of menu-->
 
 <!--Beginning of Reviews-->
-<div class="container jumbotron menu review-stuff">
-      <div *ngFor="let review of reviews" class="food-item">
+<div *ngIf = "hideMR1" class=" container jumbotron menu review-stuff" >
+    <div class = "review" style = "margin-bottom: 60px;">
+    <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea6">Write a review</label>
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write review here..."></textarea>
+      </div>
+      <button type="button" name="" id="add" class="btn btn-white">Submit</button>
+    </div>
+      <div *ngFor="let review of reviews" class="food-item" >
           <div class="card-body row">
             <h4 class="card-title col-md-9">{{review.user}}</h4>
             <p class="card-text col-md-3 text-right">{{review.posted}}</p>
@@ -108,10 +115,10 @@
 
 
   <!--Beginning of Recipe-->
-<div class="container jumbotron recipe-stuff">
-    <h4>{{recipe.name}}</h4>
+<div  *ngIf = "hideMR2" class="container jumbotron menu recipe-stuff">
+    <h4>{{recipe.recipeName}}</h4>
     <hr>
-    <p>{{recipe.name}}</p>
+    <p>{{recipe.description}}</p>
 </div>
   <!--End of Recipe-->
 

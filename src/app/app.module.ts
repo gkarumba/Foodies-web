@@ -61,7 +61,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
       { path: 'login', component: LoginComponent},
       { path: 'sign-up', component: SignupComponent},
       { path: 'super-admin', component: SuperAdminComponent},
-      { path: 'restaurant/location/Upperhill', component: RestLocationComponent}
+      { path: 'restaurant/location/:name', component: RestLocationComponent}
     ])
   ],
   providers: [RestaurantService, LocationRestaurantService],

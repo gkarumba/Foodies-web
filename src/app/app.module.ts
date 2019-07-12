@@ -1,7 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,12 @@ import { RestaurantService } from './services/rests/restaurant.service';
 import { LocationRestaurantService } from './services/rests/location-restaurant.service';
 import { RestLocationComponent } from './components/rest-location/rest-location.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/tokeninterceptor.service';
+
+
 
 @NgModule({
   declarations: [
@@ -48,23 +55,16 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent},
-      { path: 'restaurant-list/:location', component: RestaurantsComponent},
-      { path: 'restaurant/:id', component: RestComponent},
-      { path: 'foodcart', component: FoodCartComponent},
-      { path: 'order-success', component: OrderSuccessComponent},
-      { path: 'orders', component: MyordersComponent},
-      { path: 'admin/menu', component: AdminCuisinesComponent},
-      { path: 'admin/orders', component: AdminOrdersComponent},
-      { path: 'login', component: LoginComponent},
-      { path: 'sign-up', component: SignupComponent},
-      { path: 'super-admin', component: SuperAdminComponent},
-      { path: 'restaurant/location/:name', component: RestLocationComponent}
-    ])
+
   ],
-  providers: [RestaurantService, LocationRestaurantService],
+  providers: [RestaurantService, LocationRestaurantService, AuthService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

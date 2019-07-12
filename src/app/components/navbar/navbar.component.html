@@ -9,27 +9,19 @@
     <ul class="navbar-nav ml-auto">
 
 <!-- to be displayed when user is not logged in-->
-      <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Log In</a>
-        </li>
 
 <!-- to be displayed on login-->
       <li class="nav-item">
         <a class="nav-link" routerLink="/foodcart">Food Cart</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Username
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <!-- to be displayed if user is a Restaurant Owner-->
-            <a class="dropdown-item" routerLink="/admin/orders">Customer Orders</a>
-            <a class="dropdown-item" routerLink="/">Add Restaurant</a>
-          <div class="dropdown-divider"></div>
-          <!-- to be displayed to all-->
-          <a class="dropdown-item" routerLink="/">Log Out</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/sign-up" routerLinkActive="active">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>
       </li>
     </ul>
   </div>

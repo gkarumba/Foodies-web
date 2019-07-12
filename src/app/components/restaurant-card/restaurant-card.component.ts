@@ -45,6 +45,7 @@ export class RestaurantCardComponent implements OnInit {
     this.rest = this.restaurant[0].data;
     console.log(this.restaurant[0].data);
     this.restrnts = this.rest.slice(1, 6);
+    console.log(this.restrnts)
     for (var i =0; i<this.rest.length; i++){
       this.locations.push(this.rest[i].location);
     }

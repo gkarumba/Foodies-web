@@ -1,7 +1,7 @@
 <section class="jumbotron jumbotron-fluid main-header text-center d-flex align-items-center sticky-content">
   <div class="container header align-middle">
-    <h3 class="jumbotron-heading">Restaurant Name</h3>
-    <p class="lead">Location</p>
+    <h3 class="jumbotron-heading">SUBWAY</h3>
+    <p class="lead">Mombasa Road</p>
     <p class="lead">Open Time: 09:30AM</p>
     <p class="lead">Close Time: 10:30PM</p>
   </div>
@@ -39,7 +39,7 @@
 <div *ngIf = " hideRs " class="container jumbotron menu menu-stuff">
   <section id="breakfast">
     <h3 class='text-center'>Breakfast</h3>
-    <div *ngFor="let food of menu" class="food-item">
+    <div *ngFor="let food of menus" class="food-item">
       <div *ngIf='food.category == "breakfast"'>
         <div class="card-body row">
           <h4 class="card-title col-md-9">{{food.name}}</h4>
@@ -47,8 +47,8 @@
 
           <hr class='accent-1 d-inline-block mx-auto'>
           <p class="card-text col-md-9 text-left">{{food.description}}</p>
-          <button type="button" name="" id="add" class="btn btn-white">Add</button>
-          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+          <button type="button" name="" id="add" class="btn btn-white" (click) ="addItem({ id:food.id })"><a [routerLink]="['/foodcart', { id:food.id }]">Add</a></button>
+          <!-- <button type="button" name="" id="add" class="btn btn-white">Remove</button> -->
         </div>
         <hr>
       </div>
@@ -56,15 +56,15 @@
   </section>
   <section id="lunch">
     <h3 class='text-center'>Lunch</h3>
-    <div *ngFor="let food of menu" class="food-item">
+    <div *ngFor="let food of menus" class="food-item">
       <div *ngIf='food.category == "lunch"'>
         <div class="card-body row">
           <h4 class="card-title col-md-9">{{food.name}}</h4>
           <p class="card-text col-md-3 text-right">{{food.price}}</p>
           <hr class='accent-1 d-inline-block mx-auto'>
           <p class="card-text col-md-9 text-left">{{food.description}}</p>
-          <button type="button" name="" id="add" class="btn btn-white">Add</button>
-          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+          <button type="button" name="" id="add" class="btn btn-white"><a [routerLink]="['/foodcart', { id:food.id }]">Add</a></button>
+          <!-- <button type="button" name="" id="add" class="btn btn-white">Remove</button> -->
         </div>
         <hr>
       </div>
@@ -72,16 +72,16 @@
   </section>
   <section id="supper">
     <h3 class='text-center'>Supper</h3>
-    <div *ngFor="let food of menu" class="food-item">
-      <div *ngIf='food.category == "supper"'>
+    <div *ngFor="let food of menus" class="food-item">
+      <div *ngIf='food.category == "dinner"'>
         <div class="card-body row">
           <h4 class="card-title col-md-9">{{food.name}}</h4>
           <p class="card-text col-md-3 text-right">{{food.price}}</p>
 
           <hr class='accent-1 d-inline-block mx-auto'>
           <p class="card-text col-md-9 text-left">{{food.description}}</p>
-          <button type="button" name="" id="add" class="btn btn-white">Add</button>
-          <button type="button" name="" id="add" class="btn btn-white">Remove</button>
+          <button type="button" name="" id="add" class="btn btn-white"><a [routerLink]="['/foodcart', { id:food.id }]">Add</a></button>
+          <!-- <button type="button" name="" id="add" class="btn btn-white">Remove</button> -->
         </div>
         <hr>
       </div>
@@ -103,7 +103,7 @@
           <div class="card-body row">
             <h4 class="card-title col-md-9">{{review.user}}</h4>
             <p class="card-text col-md-3 text-right">{{review.posted}}</p>
-  
+
             <hr class='accent-1 d-inline-block mx-auto'>
             <p class="card-text col-md-9 text-left">{{review.review}}</p>
             <button type="button" name="" id="add" class="btn btn-white">Delete</button>

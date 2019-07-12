@@ -1,3 +1,67 @@
-<p>
-  food-cart works!
-</p>
+<div class="container">
+  <div class="jumbotron">
+
+
+    <h3>Cart Info</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Remove</th>
+            <th>Food</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of items">
+          <td>
+            <a (click)="remove(item.product.id)">X</a>
+          </td>
+          <th scope="col">{{item.product.name}}</th>
+          <th scope="col">{{item.product.price}}</th>
+          <th scope="col">{{item.quantity}}</th>
+          <th scope="col">{{item.product.price * item.quantity}}</th>
+        </tr>
+        <tr>
+        <tr>
+          <td colspan="6" >Total</td>
+          <td colspan="6"> {{total}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btn btn-outline-default"><a [routerLink]="['/restaurant/3']">Back</a></div>
+  <div class="btn btn-outline-success" style = "float:right;" (click)=display()><a [routerLink]="['/restaurant']">Check Out</a></div>
+</div>
+</div>
+
+<!-- *ngIf="items.length > 0" -->
+<!-- <table class="table" >
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sub Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{item.product.id}}</td>
+      <td>{{item.product.name}}</td>
+      <td>{{item.product.price}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.product.price * item.quantity}}</td>
+      <td>
+        <button (click)="remove(item.menu.id)" class="btn btn-default">Remove</button>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right">Total</td>
+        <td>{{total}}</td>
+    </tr>
+  </tbody>
+</table> -->

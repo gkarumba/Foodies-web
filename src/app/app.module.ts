@@ -25,6 +25,7 @@ import { LocationRestaurantService } from './services/rests/location-restaurant.
 import { RestLocationComponent } from './components/rest-location/rest-location.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 
+import { MenuserviceService } from './services/menuservice.service'
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/tokeninterceptor.service';
@@ -59,7 +60,8 @@ import { TokenInterceptorService } from './services/tokeninterceptor.service';
     HttpClientModule,
 
   ],
-  providers: [RestaurantService, LocationRestaurantService, AuthService, AuthGuard,
+  providers: [RestaurantService, LocationRestaurantService, AuthService, MenuserviceService, AuthGuard,
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

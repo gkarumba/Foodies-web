@@ -14,7 +14,7 @@ import { MenuserviceService } from '../../services/menuservice.service';
 })
 export class RestComponent implements OnInit {
 
-  private menus: Menu[];
+  public menus: Menu[];
   information = [
     new Information(1, ' 8:30', '22:00', 'we sell home cooked meals', 'Ngong\' Rd', '0725489789')
     ];

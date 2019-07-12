@@ -13,8 +13,8 @@ import { MenuserviceService } from '../../services/menuservice.service';
 })
 export class FoodCartComponent implements OnInit {
 
-  private items: Item[] = [];
-	private total = 0;
+  public items: Item[] = [];
+	public total = 0;
 
   display(){
     window.alert('Hey, your order has been received. \nYou will  receive a confirmation email shortly ');

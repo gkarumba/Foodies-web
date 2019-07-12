@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  registerUserData = { role : 'User'} ;
+  public registerUserData = { username:'', email:'', password_hash:'',phonenumber:'' ,location:'', role: 'User'} ;
   constructor(private _auth: AuthService) { }
 
   ngOnInit() {
